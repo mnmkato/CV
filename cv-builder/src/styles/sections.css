@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Roboto:wght@400&display=swap');
+.section{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 3px 3px 3px rgb(161, 159, 159);
+    font-family: Roboto;
+}
+.section-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Kanit;
+    font-weight: 500;
+}
+.edit-btn{
+    height: 52px;
+    width: 52px;
+    padding:15px;
+    margin-left: 3rem;
+}
+label{
+    text-align: left;
+}
+input{
+    padding: 1em 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+}
+.submit-btn{
+    margin-top: 0.5rem;
+}

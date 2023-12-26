@@ -4,7 +4,7 @@ import { mdiPencil } from '@mdi/js';
 
 
 export default function PersonalInfo(){
-     function editForm(params) {
+    function editForm(params) {
         
     }
     function submitForm(params) {

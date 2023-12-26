@@ -7,6 +7,9 @@
     padding: 2rem 1.5rem;
     box-shadow: 3px 3px 3px rgb(161, 159, 159);
     font-family: Roboto;
+    width:20rem;
+    margin:0.5rem;
+
 }
 .section-head{
     display: flex;
@@ -33,4 +36,8 @@ input{
 }
 .submit-btn{
     margin-top: 0.5rem;
+}
+.educ_entry,.experience_entry{
+    display: flex;
+    flex-direction: column;
 }

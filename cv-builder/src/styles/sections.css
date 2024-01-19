@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Roboto:wght@400&display=swap');
 .section{
-    display: flex;
-    flex-direction: column;
     border: 2px solid white;
-    border-radius: 1.5rem;
-    padding: 2em 1.5rem;
+    border-radius: 0.5rem;
+    padding: 1em;
     box-shadow: 3px 3px 3px rgb(161, 159, 159);
     font-family: Roboto;
-    width:20rem;
+    width:17rem;
     margin:0.5rem;
-
 }
 .section-head{
     display: flex;
@@ -18,15 +15,29 @@
     font-family: Kanit;
     font-weight: 500;
 }
-.edit-btn{
+.section-head>h2{
+    font-size: 16sp;
+    margin:0;
+}
+.section-body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.mdi-btn{
     height: 52px;
     width: 52px;
     padding:15px;
     margin-left: 3rem;
 }
+.hidden{
+    display: none;
+}
 label{
     text-align: left;
+    font-size: 14sp;
 }
+
 input{
     padding: 1em 1rem;
     border-radius: 0.5rem;
@@ -34,10 +45,22 @@ input{
     margin-bottom: 0.5rem;
     border: 1px solid #ccc;
 }
+#summaryInput{
+    resize:none
+}
 .submit-btn{
     margin-top: 0.5rem;
 }
 .educ_entry,.experience_entry{
     display: flex;
     flex-direction: column;
+    margin-top: 26px;
+}
+.entry{
+    display: grid;
+    grid-template-columns: 1fr 52px;
+    border-bottom: 0px solid white;
+}
+.entry>button{
+    margin-left: 0.5rem;
 }

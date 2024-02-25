@@ -1,12 +1,12 @@
 export const personal = {
-    name:"Richard Sanchez",
-    email:"mkatomahad@gmail.com",
-    phone:"0742968770",
-    address:"123 Anywhere St., Any City",
-    role:"Product Designer",
-    summary:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue.",
-    languages:["English", "German", "Spanish"],
-    skills:["Management Skills", "Creativity", "Digital Marketing", "Negotiation", "Critical Thinking", 'Leadership']
+    name: "Richard Sanchez",
+    email: "richard.sanchez@example.com",
+    phone: "+1 (123) 456-7890",
+    address: "456 Elm Street, Springfield, IL",
+    role: "Product Designer",
+    summary: "Experienced product designer with a passion for creating innovative solutions. Skilled in user-centered design principles and proficient in translating complex ideas into intuitive interfaces. Proven track record of delivering high-quality designs that meet user needs and business goals.",
+    languages: ["English", "Spanish", "German"],
+    skills: ["User Interface Design", "Prototyping", "Wireframing", "Usability Testing", "Adobe Creative Suite", "Sketch", "Figma"]
 }
 export const education = [
     {

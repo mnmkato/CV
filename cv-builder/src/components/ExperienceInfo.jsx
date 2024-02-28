@@ -52,55 +52,56 @@ return(
     <>
     {sharedData.experience.map((listItem, index) => (
     <div className="entry" key={index}>
-        <div className="experience_entry">
-            <label htmlFor="workStartDateInput">Start date:</label>
-            <input 
-                type="text" 
-                id="workStartDateInput" 
-                value={listItem.startDate}
-                onChange={(e) => handleInputChange(index, 'startDate', e.target.value)} />
-
-            <label htmlFor="workEndDateInput">End date:</label>
-            <input 
-                type="text" 
-                id="workEndDateInput"
-                value={listItem.endDate}
-                onChange={(e) => handleInputChange(index,  'endDate', e.target.value)} />
-
-            <label htmlFor="workNameInput">Company name:</label>
-            <input 
-                type="text" 
-                id="workNameInput"
-                value={listItem.company}
-                onChange={(e) => handleInputChange(index,  'company', e.target.value)} />
-
-            <label htmlFor="workTitleInput">Role:</label>
-            <input 
-                type="text" 
-                id="workTitleInput"
-                value={listItem.role}
-                onChange={(e) => handleInputChange(index,  'role', e.target.value)} />
-
-            <label htmlFor="workTasksInput">Responsibilites:</label>
-            
-            {listItem.responsibilities.map((resItem, resIndex) => (
-                <div className="entry" key={resIndex}>
-                    <textarea
-                        type="text"
-                        rows="5"
-                        value={resItem}
-                        onChange={(e) => handleResInputChange(index, resIndex, e.target.value)}
-                    />
-                    <button className="mdi-btn" onClick={() => removeResEntry(index, resIndex)}>
-                        <Icon path={mdiCloseCircleOutline} size={1} />
-                    </button>
-                </div>
-            ))}
-            <button className="add-entry-btn" onClick={() => addResEntry(index)}>Add responsibility</button>
-        </div>
-        <button className="mdi-btn" onClick={() => removeEntry(index)}>
+        <button className="mdi-btn btn-close" onClick={() => removeEntry(index)}>
             <Icon path={mdiCloseCircleOutline} size={1} />
         </button>
+        <label htmlFor="workStartDateInput">Start date:</label>
+        <input 
+            type="text" 
+            id="workStartDateInput" 
+            value={listItem.startDate}
+            onChange={(e) => handleInputChange(index, 'startDate', e.target.value)} />
+
+        <label htmlFor="workEndDateInput">End date:</label>
+        <input 
+            type="text" 
+            id="workEndDateInput"
+            value={listItem.endDate}
+            onChange={(e) => handleInputChange(index,  'endDate', e.target.value)} />
+
+        <label htmlFor="workNameInput">Company name:</label>
+        <input 
+            type="text" 
+            id="workNameInput"
+            value={listItem.company}
+            onChange={(e) => handleInputChange(index,  'company', e.target.value)} />
+
+        <label htmlFor="workTitleInput">Role:</label>
+        <input 
+            type="text" 
+            id="workTitleInput"
+            value={listItem.role}
+            onChange={(e) => handleInputChange(index,  'role', e.target.value)} />
+
+        <label htmlFor="workTasksInput">Responsibilites:</label>
+    
+        {listItem.responsibilities.map((resItem, resIndex) => (
+            <div className="res-div" key={resIndex}>
+                <button className="mdi-btn" onClick={() => removeResEntry(index, resIndex)}>
+                    <Icon path={mdiCloseCircleOutline} size={1} />
+                </button>
+                <textarea
+                    type="text"
+                    rows="5"
+                    value={resItem}
+                    onChange={(e) => handleResInputChange(index, resIndex, e.target.value)}
+                />
+                
+            </div>
+        ))}
+        <button className="add-entry-btn" onClick={() => addResEntry(index)}>Add responsibility</button>
+    
+    
     </div>
     ))}
     

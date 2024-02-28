@@ -26,7 +26,7 @@ export default function SkillsInfo({sharedData , onDataChange }){
 return(
     <>
     {sharedData.skills.map((listItem, index) => (
-        <div className="entry" key={index}>
+        <div className="listItem-entry" key={index}>
           <input
             type="text"
             value={listItem}

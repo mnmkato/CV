@@ -26,13 +26,13 @@ export default function ListItemInfo({sharedData , onDataChange }){
 return(
     <>
     {sharedData.languages.map((listItem, index) => (
-        <div className="entry" key={index}>
+        <div className="listItem-entry" key={index}>
           <input
             type="text"
             value={listItem}
             onChange={(e) => handleInputChange(index, e.target.value)}
           />
-            <button className="mdi-btn" onClick={() => removeEntry(index)}>
+        <button className="mdi-btn" onClick={() => removeEntry(index)}>
             <Icon path={mdiCloseCircleOutline} size={1} />
         </button>
         </div>

@@ -22,8 +22,11 @@ function App() {
 
   return (
     <>
+    <div className="header">
+      <h1>CV Editor</h1>
+    </div>
       <div className="container">
-      <div>
+      <div className='sections-container'>
       <Section name={"Personal Info"} body={<PersonalInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
         <Section name={"Languages"} body={<ListItemInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
         <Section name={"Skills"} body={<SkillsInfo sharedData={sharedData} onDataChange={handleDataChange} />} />

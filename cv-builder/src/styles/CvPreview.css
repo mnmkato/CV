@@ -4,6 +4,10 @@
     color: black;
     padding: 4rem 2rem;
     height: fit-content;
+    margin: 1rem;   
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 2rem;
   }
   .contact-info{
     display: flex;
@@ -28,9 +32,6 @@
   font-weight: bold;
 }
 .cv-content{
-  display:grid;
-  grid-template-columns: 20rem 1fr;
-  gap: 0.5rem 2rem;
 }
 .experience-unit{
   grid-area: 1/2/2/3;
@@ -43,6 +44,7 @@
 }
 .cv-heading{
   color: #27384C;
+  grid-area: 1/1/2/3;
 }
 .cv-heading>h1{
   margin: 0;

@@ -1,5 +1,4 @@
 import "../styles/CvPreview.css"
-import {education, experience} from "../data.js"
 import Icon from '@mdi/react';
 import { mdiPhone,mdiEmail,mdiMapMarker } from '@mdi/js';
 
@@ -58,8 +57,8 @@ export default function CvPreview({sharedData}) {
         </div>
         <div className="education-unit">        
             <h3 className="unit-heading">EDUCATION</h3>
-            {education.map(item=>{return (
-            <div className="unit-item" key ={education.indexOf(item)}>
+            {sharedData.education.map(item=>{return (
+            <div className="unit-item" key ={sharedData.education.indexOf(item)}>
             <p className="main-text">{item.name}</p>
             <p>{item.award}</p>
             <p>{item.startDate} - {item.endDate}</p>

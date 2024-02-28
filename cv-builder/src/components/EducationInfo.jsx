@@ -1,29 +1,30 @@
 import "../styles/sections.css"
-import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiCloseCircleOutline } from '@mdi/js';
 
 export default function EducationInfo(){
-    const [listItems, setListItems] = useState([{ name:"", award:"", startDate:"", endDate:""}]);
 
-    function submitForm(params) {
+    if (!sharedData || !sharedData.education) {
+        return null; 
     }
-    function addEntry(params){
-        setListItems([...listItems, {name:"", award:"", startDate:"", endDate:""}]);
+    function handleInputChange(index, name, value) {
+        const updatedEducation = [...sharedData.education];
+        updatedEducation[index][name] = value;
+        onDataChange('education', updatedEducation);
+    }
+    function addEntry(params) {
+        const updatedEducation = [...sharedData.education,{name:"", award:"", startDate:"", endDate:""} ]; 
+        onDataChange('education', updatedEducation);
     }
     function removeEntry(index) {
-        const newListItems = [...listItems];
-        newListItems.splice(index, 1);
-        setListItems(newListItems);
+        const updatedEducation = [...sharedData.education];
+        updatedEducation.splice(index, 1);
+        onDataChange('education', updatedEducation);
    }
-   function handleInputChange(index, field, value) {
-        const newListItems = [...listItems];
-        newListItems[index][field] = value;
-        setListItems(newListItems);
-}
+
 return(
     <>
-     {listItems.map((listItem, index) => (
+     {sharedData.education.map((listItem, index) => (
         <div className="entry" key={index}>
             <div className="educ_entry">
                 <label htmlFor="studyStartDateInput">Start date:</label>
@@ -63,7 +64,6 @@ return(
     ))}
     
     <button className="add-entry-btn" onClick={addEntry}>Add New</button>
-    <button className="submit-btn" onClick={submitForm}>Submit</button>
     </>
 )
 }

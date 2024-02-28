@@ -13,7 +13,7 @@ export default function SkillsInfo({sharedData , onDataChange }){
         updatedSkills[index] = value;
         onDataChange('skills', updatedSkills);
     }
-    function addEntry(params) {
+    function addEntry() {
         const updatedSkills = [...sharedData.skills, '']; 
         onDataChange('skills', updatedSkills);
     }

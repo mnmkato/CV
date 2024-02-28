@@ -9,31 +9,24 @@ export const personal = {
     skills: ["User Interface Design", "Prototyping", "Wireframing", "Usability Testing", "Adobe Creative Suite", "Sketch", "Figma"],
     experience: [
         {
-            role:"Product Designer",
-            company:"Studio Showde",
-            startDate:"2020",
-            endDate:"2022",
-            responsiblities:[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                " Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue."]
+            role: "Senior Product Designer",
+            company: "InnovateTech",
+            startDate: "2022",
+            endDate: "2024",
+            responsibilities: [
+                "Led the design team in developing innovative user interfaces for mobile applications.",
+                "Conducted usability testing and gathered user feedback to iterate on designs for optimal user experience."
+            ]
         },
         {
-            role:"Product Designer",
-            company:"Studio Showde",
-            startDate:"2020",
-            endDate:"2022",
-            responsiblities:[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                " Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue."]
-        },
-        {
-            role:"Product Designer",
-            company:"Studio Showde",
-            startDate:"2020",
-            endDate:"2022",
-            responsiblities:[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                " Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue."]    
+            role: "Lead UX Designer",
+            company: "DigitalSolutions Inc.",
+            startDate: "2019",
+            endDate: "2021",
+            responsibilities: [
+                "Designed and implemented user-centered interfaces for web platforms.",
+                "Collaborated with cross-functional teams to ensure alignment between design and development."
+            ]
         }
     ],
     education: [

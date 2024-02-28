@@ -49,7 +49,7 @@ export default function CvPreview({sharedData}) {
             <p className="main-text">{item.role}</p>
             <p className="main-text">{item.startDate} - {item.endDate}</p>
             <ul>
-            {item.responsiblities.map(responsiblity=>{return <li key={item.responsiblities.indexOf(responsiblity)}>{responsiblity}</li>})}
+            {item.responsibilities.map(responsiblity=>{return <li key={item.responsibilities.indexOf(responsiblity)}>{responsiblity}</li>})}
             </ul>
             </div>
             )

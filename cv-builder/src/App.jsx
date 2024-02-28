@@ -28,7 +28,7 @@ function App() {
         <Section name={"Languages"} body={<ListItemInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
         <Section name={"Skills"} body={<SkillsInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
         <Section name={"Experience Info"} body={<ExperienceInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
-        <Section name={"Education Info"} body={<EducationInfo />} />
+        <Section name={"Education Info"} body={<EducationInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
       </div>
       <CvPreview  sharedData={sharedData}/>
       </div>

@@ -2,11 +2,12 @@ import "../styles/sections.css"
 import Icon from '@mdi/react';
 import { mdiCloseCircleOutline } from '@mdi/js';
 
-export default function EducationInfo(){
+export default function EducationInfo({sharedData , onDataChange }){
 
     if (!sharedData || !sharedData.education) {
         return null; 
     }
+
     function handleInputChange(index, name, value) {
         const updatedEducation = [...sharedData.education];
         updatedEducation[index][name] = value;
@@ -29,14 +30,14 @@ return(
             <div className="educ_entry">
                 <label htmlFor="studyStartDateInput">Start date:</label>
                 <input 
-                    type="date" 
+                    type="text" 
                     id="studyStartDateInput"
                     value={listItem.startDate}
                     onChange={(e) => handleInputChange(index, 'startDate', e.target.value)} />
                
                 <label htmlFor="studyEndDateInput">End date:</label>
                 <input 
-                    type="date" 
+                    type="text" 
                     id="studyEndDateInput"
                     value={listItem.endDate}
                     onChange={(e) => handleInputChange(index,  'endDate', e.target.value)} />

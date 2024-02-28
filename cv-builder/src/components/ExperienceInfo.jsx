@@ -28,6 +28,26 @@ export default function ExperienceInfo({sharedData , onDataChange }){
         updatedExperience.splice(index, 1);
         onDataChange('experience', updatedExperience);
    }
+
+    function handleResInputChange(expIndex, resIndex, value) {
+        const updatedExperience = [...sharedData.experience];
+        updatedExperience[expIndex].responsibilities[resIndex] = value;
+        onDataChange('experience', updatedExperience);
+    }
+
+    function addResEntry(expIndex) {
+        const updatedExperience = [...sharedData.experience];
+        updatedExperience[expIndex].responsibilities.push("");
+        onDataChange('experience', updatedExperience);
+    }
+
+    function removeResEntry(expIndex, resIndex) {
+        const updatedExperience = [...sharedData.experience];
+        updatedExperience[expIndex].responsibilities.splice(resIndex, 1);
+        onDataChange('experience', updatedExperience);
+    }
+
+
 return(
     <>
     {sharedData.experience.map((listItem, index) => (
@@ -62,11 +82,21 @@ return(
                 onChange={(e) => handleInputChange(index,  'role', e.target.value)} />
 
             <label htmlFor="workTasksInput">Responsibilites:</label>
-            <textarea 
-                type="text" 
-                id="workTasksInput"
-                value={listItem.responsiblities}
-                onChange={(e) => handleInputChange(index,  'responsiblities', e.target.value)} />
+            
+            {listItem.responsibilities.map((resItem, resIndex) => (
+                <div className="entry" key={resIndex}>
+                    <textarea
+                        type="text"
+                        rows="5"
+                        value={resItem}
+                        onChange={(e) => handleResInputChange(index, resIndex, e.target.value)}
+                    />
+                    <button className="mdi-btn" onClick={() => removeResEntry(index, resIndex)}>
+                        <Icon path={mdiCloseCircleOutline} size={1} />
+                    </button>
+                </div>
+            ))}
+            <button className="add-entry-btn" onClick={() => addResEntry(index)}>Add responsibility</button>
         </div>
         <button className="mdi-btn" onClick={() => removeEntry(index)}>
             <Icon path={mdiCloseCircleOutline} size={1} />

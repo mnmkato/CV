@@ -8,6 +8,8 @@
   text-align: center;
   padding: 1rem;
   width: 100%;
+  box-shadow: 0 1px 5px white;
+  margin-bottom: 1rem;
 }
 .header>h1{
   margin: 0;

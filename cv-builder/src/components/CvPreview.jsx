@@ -44,8 +44,8 @@ export default function CvPreview({sharedData}) {
         </div>
         <div className="experience-unit">
             <h3 className="unit-heading">EXPERIENCE</h3>
-            {experience.map(item=>{return (
-            <div className="unit-item" key={experience.indexOf(item)}>
+            {sharedData.experience.map(item=>{return (
+            <div className="unit-item" key={sharedData.experience.indexOf(item)}>
             <p className="main-text">{item.company}</p>
             <p className="main-text">{item.role}</p>
             <p className="main-text">{item.startDate} - {item.endDate}</p>

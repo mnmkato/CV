@@ -5,6 +5,7 @@ import ExperienceInfo from './components/ExperienceInfo'
 import CvPreview from './components/CvPreview'
 import Section from './components/Section'
 import ListItemInfo from './components/ListItemInfo'
+import SkillsInfo from './components/SkillsInfo'
 import "./App.css"
 import {personal} from './data.js'
 function App() {
@@ -24,10 +25,10 @@ function App() {
       <div className="container">
       <div>
       <Section name={"Personal Info"} body={<PersonalInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
-        <Section name={"Languages"} body={<ListItemInfo />} />
-        <Section name={"Skills"} body={<ListItemInfo />} />
+        <Section name={"Languages"} body={<ListItemInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
+        <Section name={"Skills"} body={<SkillsInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
+        <Section name={"Experience Info"} body={<ExperienceInfo sharedData={sharedData} onDataChange={handleDataChange} />} />
         <Section name={"Education Info"} body={<EducationInfo />} />
-        <Section name={"Experience Info"} body={<ExperienceInfo/>} />
       </div>
       <CvPreview  sharedData={sharedData}/>
       </div>

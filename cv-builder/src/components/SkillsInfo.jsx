@@ -3,29 +3,29 @@ import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiCloseCircleOutline } from '@mdi/js';
 
-export default function ListItemInfo({sharedData , onDataChange }){
+export default function SkillsInfo({sharedData , onDataChange }){
     
-    if (!sharedData || !sharedData.languages) {
+    if (!sharedData || !sharedData.skills) {
         return null; 
     }
     function handleInputChange(index, value) {
-        const updatedLanguages = [...sharedData.languages];
-        updatedLanguages[index] = value;
-        onDataChange('languages', updatedLanguages);
+        const updatedSkills = [...sharedData.skills];
+        updatedSkills[index] = value;
+        onDataChange('skills', updatedSkills);
     }
     function addEntry(params) {
-        const updatedLanguages = [...sharedData.languages, '']; 
-        onDataChange('languages', updatedLanguages);
+        const updatedSkills = [...sharedData.skills, '']; 
+        onDataChange('skills', updatedSkills);
     }
     function removeEntry(index) {
-        const updatedLanguages = [...sharedData.languages];
-        updatedLanguages.splice(index, 1);
-        onDataChange('languages', updatedLanguages);
+        const updatedSkills = [...sharedData.skills];
+        updatedSkills.splice(index, 1);
+        onDataChange('skills', updatedSkills);
    }
     
 return(
     <>
-    {sharedData.languages.map((listItem, index) => (
+    {sharedData.skills.map((listItem, index) => (
         <div className="entry" key={index}>
           <input
             type="text"

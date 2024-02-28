@@ -1,58 +1,48 @@
 import "../styles/sections.css"
-import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiCloseCircleOutline } from '@mdi/js';
 
-export default function ExperienceInfo(){
-    const [listItems, setListItems] = useState([
-        {
-        role:"",
-        company:"",
-        startDate:"",
-        endDate:"",
-        responsiblities:[""]
-        }
-    ]);
+export default function ExperienceInfo({sharedData , onDataChange }){
 
-    function submitForm(params) {
-        
+    if (!sharedData || !sharedData.experience) {
+        return null; 
     }
-    function addEntry(params){
-        setListItems([...listItems, 
-            {
-                role:"",
-                company:"",
-                startDate:"",
-                endDate:"",
-                responsiblities:[""]
-                }
-        ]);
+    function handleInputChange(index, name, value) {
+        const updatedExperience = [...sharedData.experience];
+        updatedExperience[index][name] = value;
+        onDataChange('experience', updatedExperience);
+    }
+    function addEntry(params) {
+        const updatedExperience = [...sharedData.experience, {
+                            role:"",
+                            company:"",
+                            startDate:"",
+                            endDate:"",
+                            responsiblities:[""]
+                            }
+                        ]; 
+        onDataChange('experience', updatedExperience);
     }
     function removeEntry(index) {
-        const newListItems = [...listItems];
-        newListItems.splice(index, 1);
-        setListItems(newListItems);
+        const updatedExperience = [...sharedData.experience];
+        updatedExperience.splice(index, 1);
+        onDataChange('experience', updatedExperience);
    }
-   function handleInputChange(index, field, value) {
-        const newListItems = [...listItems];
-        newListItems[index][field] = value;
-        setListItems(newListItems);
-}
 return(
     <>
-    {listItems.map((listItem, index) => (
+    {sharedData.experience.map((listItem, index) => (
     <div className="entry" key={index}>
         <div className="experience_entry">
             <label htmlFor="workStartDateInput">Start date:</label>
             <input 
-                type="date" 
+                type="text" 
                 id="workStartDateInput" 
                 value={listItem.startDate}
                 onChange={(e) => handleInputChange(index, 'startDate', e.target.value)} />
 
             <label htmlFor="workEndDateInput">End date:</label>
             <input 
-                type="date" 
+                type="text" 
                 id="workEndDateInput"
                 value={listItem.endDate}
                 onChange={(e) => handleInputChange(index,  'endDate', e.target.value)} />
@@ -85,7 +75,6 @@ return(
     ))}
     
     <button className="add-entry-btn" onClick={addEntry}>Add New</button>
-    <button className="submit-btn" onClick={submitForm}>Submit</button>
     </>
 )
 }
